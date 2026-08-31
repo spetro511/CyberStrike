@@ -28,19 +28,44 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.webp">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.webp">
-    <img src="assets/hero-dark.png" alt="CyberStrike — open-source AI agent for offensive security" width="880">
+    <img src="assets/hero-dark.png" alt="CyberStrike by Suren Sahaydachny — open-source AI agent for offensive security" width="880">
   </picture>
 </p>
 
-<h3 align="center">The first open-source AI agent built for offensive security.</h3>
+<h1 align="center">CyberStrike</h1>
+
+<h3 align="center">The AI-first era of offensive security is already here.</h3>
 
 <p align="center">
-  Automated penetration testing from your terminal — plug in your Claude, GPT, or any LLM subscription<br>
-  and turn it into an autonomous red team agent with 13+ specialized agents, 7,600+ security skills, and 120+ OWASP test cases.<br>
+  <strong>A personal open-source project maintained by <a href="https://www.linkedin.com/in/suren-sahaydachny">Suren Sahaydachny</a>.</strong>
+</p>
+
+<p align="center">
+  The old model made the security professional the middleware between dozens of disconnected tools.<br>
+  CyberStrike replaces that fragmentation with one intelligent, inspectable, open-source orchestration layer.<br>
+  Bring Claude, GPT, Gemini, Copilot, or a local model. Leave with an autonomous red team.
+</p>
+
+<p align="center">
   <b>150+ AI providers</b> &bull; <b>5,300+ models</b> &bull; <b>56+ built-in tools</b> &bull; <b>176+ MCP tools</b>
 </p>
 
 <p align="center">
+  <a href="https://www.linkedin.com/in/suren-sahaydachny"><img alt="Built by Suren Sahaydachny" src="https://img.shields.io/badge/Built%20by-Suren%20Sahaydachny-111827?style=for-the-badge" /></a>
+  <a href="mailto:surenpeter511@gmail.com"><img alt="Email Suren Sahaydachny" src="https://img.shields.io/badge/Email-surenpeter511%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/suren-sahaydachny"><img alt="Connect with Suren Sahaydachny on LinkedIn" src="https://img.shields.io/badge/LinkedIn-Suren%20Sahaydachny-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/spetro511"><img alt="Suren Sahaydachny on GitHub" src="https://img.shields.io/badge/GitHub-spetro511-181717?style=flat-square&logo=github" /></a>
+  <a href="https://www.npmjs.com/package/@cyberstrike-io/cyberstrike"><img alt="npm" src="https://img.shields.io/npm/v/@cyberstrike-io/cyberstrike?style=flat-square&color=1e40af" /></a>
+  <a href="https://www.npmjs.com/package/@cyberstrike-io/cyberstrike"><img alt="Downloads" src="https://img.shields.io/npm/dm/@cyberstrike-io/cyberstrike?style=flat-square&color=1e40af" /></a>
+  <a href="https://github.com/CyberStrikeus/CyberStrike/actions/workflows/publish.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/CyberStrikeus/CyberStrike/publish.yml?style=flat-square&branch=dev" /></a>
+  <a href="https://github.com/CyberStrikeus/CyberStrike/blob/dev/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-AGPL--3.0-1e40af?style=flat-square" /></a>
+</p>
+
+<p align="center">
+  <a href="#a-personal-note-from-suren-sahaydachny">Why I Built This</a> &bull;
   <a href="#quick-start">Quick Start</a> &bull;
   <a href="#intelligence-layer">Intelligence Layer</a> &bull;
   <a href="#what-makes-it-different">What Makes It Different</a> &bull;
@@ -55,13 +80,38 @@
   <a href="https://cyberstrike.io">Website</a>
 </p>
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/@cyberstrike-io/cyberstrike"><img alt="npm" src="https://img.shields.io/npm/v/@cyberstrike-io/cyberstrike?style=flat-square&color=1e40af" /></a>
-  <a href="https://www.npmjs.com/package/@cyberstrike-io/cyberstrike"><img alt="Downloads" src="https://img.shields.io/npm/dm/@cyberstrike-io/cyberstrike?style=flat-square&color=1e40af" /></a>
-  <a href="https://github.com/CyberStrikeus/CyberStrike/actions/workflows/publish.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/CyberStrikeus/CyberStrike/publish.yml?style=flat-square&branch=dev" /></a>
-  <a href="https://discord.gg/snunAaHf6U"><img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord&color=1e40af" /></a>
-  <a href="https://github.com/CyberStrikeus/CyberStrike/blob/dev/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-AGPL--3.0-1e40af?style=flat-square" /></a>
-</p>
+---
+
+## A Personal Note from Suren Sahaydachny
+
+> We do not notice revolutions when they start quietly.
+
+Offensive security is still fragmented across terminals, browsers, scanners, notes, scripts, dashboards, and tribal knowledge. The tools are powerful. The system around them is not. We ask talented people to copy, paste, context-switch, remember every finding, and manually conduct an orchestra that was never designed to play together.
+
+That model got us here. It will not define what comes next.
+
+CyberStrike is my personal open-source workstream for the next era of security: an AI-first orchestration layer that turns models, agents, methodologies, browsers, remote infrastructure, and specialist tools into one coordinated system. These are not disconnected utilities wearing an AI badge. They are parts of a security platform that can reason about the objective, choose the right instrument, preserve context, validate results, and keep a human in control.
+
+The future will not belong to the team with the most dashboards. It will belong to the team that can embed intelligence into the flow of work so naturally that the complexity recedes and the outcome takes center stage.
+
+I am open-sourcing this work because security infrastructure should be inspectable. Methodology should be shareable. Intelligence should not be trapped behind one provider, one model, or one company. The strongest systems will be built in the open, pressure-tested by the people who use them, and improved by a community bold enough to challenge the old assumptions.
+
+I have been waiting my whole life for this moment—the point where AI moves from science fiction into our everyday reality. Now I get to build it.
+
+**— Suren Sahaydachny**<br>
+Builder and maintainer of this personal CyberStrike workstream<br>
+[surenpeter511@gmail.com](mailto:surenpeter511@gmail.com) · [LinkedIn](https://www.linkedin.com/in/suren-sahaydachny) · [GitHub](https://github.com/spetro511)
+
+| The project at a glance | |
+| --- | --- |
+| **Maintainer** | **Suren Sahaydachny** |
+| **Mission** | Make serious offensive security automation open, adaptable, and model-agnostic |
+| **Philosophy** | Do not build another tool. Build a system that knows how to use the tools. |
+| **Operating model** | Human judgment + agentic execution + reproducible evidence |
+| **License** | AGPL-3.0-only |
+| **Contact** | [surenpeter511@gmail.com](mailto:surenpeter511@gmail.com) |
+
+> **Authorized security testing only.** CyberStrike is built for systems you own or have explicit permission to assess. Capability without judgment is noise; capability with accountability is leverage.
 
 ---
 
@@ -84,6 +134,10 @@ Explore the full documentation at **[docs.cyberstrike.io](https://docs.cyberstri
 CyberStrike isn't just a wrapper around an LLM. It's an intelligence layer that transforms any AI model into an offensive security specialist.
 
 **How it works:** When you connect your LLM provider, CyberStrike injects domain-specific context — OWASP testing methodology, vulnerability patterns, attack chain reasoning, and tool orchestration logic — into every interaction. The model doesn't need to know security; CyberStrike teaches it.
+
+> **My design principle:** The AI should not be the star of the show. It should be the conductor behind the curtain — coordinating every instrument, preserving context, and making the hard parts feel inevitable.
+>
+> **— Suren Sahaydachny**
 
 **What the intelligence layer provides:**
 
@@ -390,7 +444,9 @@ curl -fsSL https://cyberstrike.io/install.sh | bash
 
 ### Contributing
 
-CyberStrike is built by the security community, for the security community. We welcome contributions across:
+CyberStrike is a personal project with community-sized ambition. I am opening the doors because the future of security should not be designed in a closed room. If you believe agents can do more than chat, tools can do more than sit in silos, and open systems can outperform locked ecosystems, there is a place for your work here.
+
+We welcome contributions across:
 
 - **Security agents and skills** — New attack methodologies, testing patterns, vulnerability detection
 - **MCP servers** — Connect new security tools and data sources
@@ -398,6 +454,33 @@ CyberStrike is built by the security community, for the security community. We w
 - **Core improvements** — Performance, UX, provider integrations, bug fixes
 
 Read the [Contributing Guide](./CONTRIBUTING.md) before submitting a PR. All contributions must follow the project's [ethical use policy](./CODE_OF_CONDUCT.md) — CyberStrike is for authorized security testing only.
+
+---
+
+### Maintainer & Contact
+
+<table>
+<tr>
+<td width="140" align="center">
+  <a href="https://github.com/spetro511"><b>Suren<br>Sahaydachny</b></a>
+</td>
+<td>
+
+**Suren Sahaydachny** maintains this public CyberStrike workstream as a personal open-source project focused on AI-first systems, multi-agent orchestration, security automation, and the future of human-machine collaboration.
+
+- **Email:** [surenpeter511@gmail.com](mailto:surenpeter511@gmail.com)
+- **LinkedIn:** [linkedin.com/in/suren-sahaydachny](https://www.linkedin.com/in/suren-sahaydachny)
+- **GitHub:** [github.com/spetro511](https://github.com/spetro511)
+
+</td>
+</tr>
+</table>
+
+If you are building at the intersection of AI, orchestration, open source, and security—or if you simply see the same future I do—reach out. You never know what a brief conversation can lead to, especially these days.
+
+#### Provenance
+
+This personal workstream is based on the upstream [CyberStrike](https://github.com/CyberStrikeus/CyberStrike) project. Its Git history, contributors, license, and attribution remain preserved. Personal stewardship by Suren Sahaydachny is additive, not a claim over the work of the broader CyberStrike community.
 
 ---
 
@@ -422,8 +505,11 @@ CyberStrike is the core platform. These MCP servers extend its capabilities:
 ---
 
 <p align="center">
-  <a href="https://cyberstrike.io"><b>cyberstrike.io</b></a> · <a href="https://docs.cyberstrike.io"><b>Docs</b></a> · <a href="https://discord.gg/snunAaHf6U"><b>Discord</b></a> · <a href="https://x.com/cyberstrikeio"><b>X.com</b></a> · <a href="https://github.com/CyberStrikeus/CyberStrike"><b>GitHub</b></a>
+  <a href="https://www.linkedin.com/in/suren-sahaydachny"><b>Suren Sahaydachny</b></a> · <a href="mailto:surenpeter511@gmail.com"><b>Email</b></a> · <a href="https://github.com/spetro511"><b>GitHub</b></a> · <a href="https://cyberstrike.io"><b>CyberStrike</b></a> · <a href="https://docs.cyberstrike.io"><b>Docs</b></a> · <a href="https://discord.gg/snunAaHf6U"><b>Discord</b></a>
 </p>
 <p align="center">
-  <sub>Built by hackers who got tired of copy-pasting between terminals.</sub>
+  <sub>A personal open-source workstream maintained by <b>Suren Sahaydachny</b> — for security professionals who got tired of being the middleware between their tools.</sub>
+</p>
+<p align="center">
+  <strong>The next era will not be defined by more software. It will be defined by better orchestration.</strong>
 </p>
