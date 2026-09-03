@@ -1,5 +1,6 @@
 <p align="center">
-  <a href="README.md">English</a> |
+  <a href="README.md">English (personal fork)</a> |
+  Upstream translations:
   <a href="README.zh.md">简体中文</a> |
   <a href="README.zht.md">繁體中文</a> |
   <a href="README.ko.md">한국어</a> |
@@ -28,488 +29,213 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.webp">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.webp">
-    <img src="assets/hero-dark.png" alt="CyberStrike by Suren Sahaydachny — open-source AI agent for offensive security" width="880">
+    <img src="assets/hero-dark.png" alt="CyberStrike open-source offensive security agent" width="880">
   </picture>
 </p>
 
-<h1 align="center">CyberStrike</h1>
-
-<h3 align="center">The AI-first era of offensive security is already here.</h3>
+<h3 align="center">Personal fork: an enhanced CyberStrike distribution and operational workbench.</h3>
 
 <p align="center">
-  <strong>A personal open-source project maintained by <a href="https://www.linkedin.com/in/suren-sahaydachny">Suren Sahaydachny</a>.</strong>
+  Maintained by <a href="https://github.com/spetro511">Suren Sahayachny (<code>spetro511</code>)</a><br>
+  and built on the original open-source project from
+  <a href="https://github.com/CyberStrikeus/CyberStrike"><code>CyberStrikeus/CyberStrike</code></a>
+  and its contributors.
 </p>
 
 <p align="center">
-  The old model made the security professional the middleware between dozens of disconnected tools.<br>
-  CyberStrike replaces that fragmentation with one intelligent, inspectable, open-source orchestration layer.<br>
-  Bring Claude, GPT, Gemini, Copilot, or a local model. Leave with an autonomous red team.
+  <a href="#about-this-fork">About this fork</a> &bull;
+  <a href="#operational-workbench">Workbench</a> &bull;
+  <a href="#using-this-fork">Installation</a> &bull;
+  <a href="#upstream-project-and-contributor-credit">Upstream</a> &bull;
+  <a href="#ethical-use">Ethical use</a> &bull;
+  <a href="#license">License</a>
 </p>
 
 <p align="center">
-  <b>150+ AI providers</b> &bull; <b>5,300+ models</b> &bull; <b>56+ built-in tools</b> &bull; <b>176+ MCP tools</b>
-</p>
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/suren-sahaydachny"><img alt="Built by Suren Sahaydachny" src="https://img.shields.io/badge/Built%20by-Suren%20Sahaydachny-111827?style=for-the-badge" /></a>
-  <a href="mailto:surenpeter511@gmail.com"><img alt="Email Suren Sahaydachny" src="https://img.shields.io/badge/Email-surenpeter511%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://www.linkedin.com/in/suren-sahaydachny"><img alt="Connect with Suren Sahaydachny on LinkedIn" src="https://img.shields.io/badge/LinkedIn-Suren%20Sahaydachny-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/spetro511"><img alt="Suren Sahaydachny on GitHub" src="https://img.shields.io/badge/GitHub-spetro511-181717?style=flat-square&logo=github" /></a>
-  <a href="https://www.npmjs.com/package/@cyberstrike-io/cyberstrike"><img alt="npm" src="https://img.shields.io/npm/v/@cyberstrike-io/cyberstrike?style=flat-square&color=1e40af" /></a>
-  <a href="https://www.npmjs.com/package/@cyberstrike-io/cyberstrike"><img alt="Downloads" src="https://img.shields.io/npm/dm/@cyberstrike-io/cyberstrike?style=flat-square&color=1e40af" /></a>
-  <a href="https://github.com/CyberStrikeus/CyberStrike/actions/workflows/publish.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/CyberStrikeus/CyberStrike/publish.yml?style=flat-square&branch=dev" /></a>
-  <a href="https://github.com/CyberStrikeus/CyberStrike/blob/dev/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-AGPL--3.0-1e40af?style=flat-square" /></a>
-</p>
-
-<p align="center">
-  <a href="#a-personal-note-from-suren-sahaydachny">Why I Built This</a> &bull;
-  <a href="#quick-start">Quick Start</a> &bull;
-  <a href="#intelligence-layer">Intelligence Layer</a> &bull;
-  <a href="#what-makes-it-different">What Makes It Different</a> &bull;
-  <a href="#agents">Agents</a> &bull;
-  <a href="#security-skills">Skills</a> &bull;
-  <a href="#web-ui--remote-access">Web UI</a> &bull;
-  <a href="#bolt--remote-tool-execution">Bolt</a> &bull;
-  <a href="#mcp-ecosystem">MCP Ecosystem</a> &bull;
-  <a href="#post-exploitation">Post-Exploitation</a> &bull;
-  <a href="#installation">Installation</a> &bull;
-  <a href="https://docs.cyberstrike.io">Docs</a> &bull;
-  <a href="https://cyberstrike.io">Website</a>
+  <a href="https://github.com/spetro511/CyberStrike"><img alt="Personal fork" src="https://img.shields.io/badge/fork-spetro511%2FCyberStrike-1e40af?style=flat-square" /></a>
+  <a href="https://github.com/CyberStrikeus/CyberStrike"><img alt="Upstream project" src="https://img.shields.io/badge/upstream-CyberStrikeus%2FCyberStrike-334155?style=flat-square" /></a>
+  <a href="https://github.com/CyberStrikeus/CyberStrike/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-AGPL--3.0--only-1e40af?style=flat-square" /></a>
 </p>
 
 ---
 
-## A Personal Note from Suren Sahaydachny
+### About This Fork
 
-> We do not notice revolutions when they start quietly.
+> [!IMPORTANT]
+> CyberStrike originated at
+> [**`CyberStrikeus/CyberStrike`**](https://github.com/CyberStrikeus/CyberStrike). This repository is Suren
+> Sahayachny's personal fork of that AGPL-licensed open-source project. Suren did **not** create the original
+> CyberStrike project; its original authors and contributors retain full credit through the upstream repository and
+> Git history.
 
-Offensive security is still fragmented across terminals, browsers, scanners, notes, scripts, dashboards, and tribal knowledge. The tools are powerful. The system around them is not. We ask talented people to copy, paste, context-switch, remember every finding, and manually conduct an orchestra that was never designed to play together.
+Suren took the upstream project and substantially enhanced it as an operational distribution for day-to-day,
+authorized security work. The main contribution of this fork is an expanded Web UI that acts as a centralized hub
+for observing an engagement, understanding its posture, managing evidence, and operating a managed CyberStrike
+deployment.
 
-That model got us here. It will not define what comes next.
-
-CyberStrike is my personal open-source workstream for the next era of security: an AI-first orchestration layer that turns models, agents, methodologies, browsers, remote infrastructure, and specialist tools into one coordinated system. These are not disconnected utilities wearing an AI badge. They are parts of a security platform that can reason about the objective, choose the right instrument, preserve context, validate results, and keep a human in control.
-
-The future will not belong to the team with the most dashboards. It will belong to the team that can embed intelligence into the flow of work so naturally that the complexity recedes and the outcome takes center stage.
-
-I am open-sourcing this work because security infrastructure should be inspectable. Methodology should be shareable. Intelligence should not be trapped behind one provider, one model, or one company. The strongest systems will be built in the open, pressure-tested by the people who use them, and improved by a community bold enough to challenge the old assumptions.
-
-I have been waiting my whole life for this moment—the point where AI moves from science fiction into our everyday reality. Now I get to build it.
-
-**— Suren Sahaydachny**<br>
-Builder and maintainer of this personal CyberStrike workstream<br>
-[surenpeter511@gmail.com](mailto:surenpeter511@gmail.com) · [LinkedIn](https://www.linkedin.com/in/suren-sahaydachny) · [GitHub](https://github.com/spetro511)
-
-| The project at a glance | |
-| --- | --- |
-| **Maintainer** | **Suren Sahaydachny** |
-| **Mission** | Make serious offensive security automation open, adaptable, and model-agnostic |
-| **Philosophy** | Do not build another tool. Build a system that knows how to use the tools. |
-| **Operating model** | Human judgment + agentic execution + reproducible evidence |
-| **License** | AGPL-3.0-only |
-| **Contact** | [surenpeter511@gmail.com](mailto:surenpeter511@gmail.com) |
-
-> **Authorized security testing only.** CyberStrike is built for systems you own or have explicit permission to assess. Capability without judgment is noise; capability with accountability is leverage.
+The upstream package, website, documentation, releases, and community remain upstream resources. Features documented
+as fork enhancements below may not be present in an upstream release.
 
 ---
 
-### Quick Start
+### Operational Workbench
+
+The fork connects the existing agent, tool, browser, MCP, Bolt, and finding data into one live browser workbench.
+
+| Area                        | Fork enhancement                                                                                                                                                          |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Central Web UI**          | A session workbench that keeps agent interaction, findings, execution status, and engagement context together instead of treating the browser as a static companion view. |
+| **Live activity**           | Durable, redacted engagement events with live updates, correlation data, source filters, timeline and lane views, reconnect recovery, and JSONL export.                   |
+| **Mission posture**         | Methodology phase state, per-asset coverage, blockers, warnings, attack-chain candidates, agent performance, and approval-aware next actions.                             |
+| **Topology**                | Evidence-linked assets, hosts, services, routes, endpoints, identities, findings, and relationships in a searchable engagement graph.                                     |
+| **Nmap workflows**          | Approval-gated scan profiles, exact command previews, canonical XML ingestion, saved scan history, topology projection, and comparisons between scans.                    |
+| **Target notes**            | Operator-authored notes attached to topology entities, with links and human-confirmed provenance.                                                                         |
+| **Structured memory**       | Project and session memory with working, episodic, semantic, and procedural categories; search, provenance, trust, confidence, redaction, and invalidation.               |
+| **Observer access**         | A server-enforced read-only role for redacted activity, mission, topology, findings, and status data without mutation, secret, raw-event, PTY, or configuration access.   |
+| **Managed Kali deployment** | Target-selectable source builds, installation of the matching HackBrowser worker and Web UI, and a localhost-only `systemd` user service template.                        |
+
+The implementation is visible in the
+[session workbench UI](./packages/app/src/pages/session/),
+[server routes](./packages/cyberstrike/src/server/routes/),
+[topology and Nmap model](./packages/cyberstrike/src/topology/), and
+[structured memory store](./packages/cyberstrike/src/memory/).
+
+#### Operational flow
+
+```text
+Authorized engagement
+        |
+        v
+CyberStrike agent and tools -----> durable, redacted activity
+        |                                      |
+        +--> Mission posture                   +--> Web UI timeline and lanes
+        +--> Nmap evidence --> Topology
+        +--> Findings and target notes
+        +--> Structured project/session memory
+
+Operator: full authenticated control
+Observer: redacted read-only projection
+```
+
+---
+
+### Using This Fork
+
+#### Upstream release
+
+The published package is maintained by the upstream project:
 
 ```bash
-npm i -g @cyberstrike-io/cyberstrike@latest && cyberstrike
-```
-
-That's it. CyberStrike launches a TUI in your terminal, asks for your LLM provider and API key on first run, and you're ready to go. Tell it what to test — it handles reconnaissance, vulnerability discovery, exploitation, and reporting autonomously.
-
-> **Already have a Claude Code or OpenAI subscription?** CyberStrike's intelligence layer sits on top of your existing AI subscription. No separate API costs — your current plan powers an entire pentest toolkit.
-
-Explore the full documentation at **[docs.cyberstrike.io](https://docs.cyberstrike.io)** or visit **[cyberstrike.io](https://cyberstrike.io)** for demos and guides.
-
----
-
-### Intelligence Layer
-
-CyberStrike isn't just a wrapper around an LLM. It's an intelligence layer that transforms any AI model into an offensive security specialist.
-
-**How it works:** When you connect your LLM provider, CyberStrike injects domain-specific context — OWASP testing methodology, vulnerability patterns, attack chain reasoning, and tool orchestration logic — into every interaction. The model doesn't need to know security; CyberStrike teaches it.
-
-> **My design principle:** The AI should not be the star of the show. It should be the conductor behind the curtain — coordinating every instrument, preserving context, and making the hard parts feel inevitable.
->
-> **— Suren Sahaydachny**
-
-**What the intelligence layer provides:**
-
-- **Schema normalization** — Structured output from any provider, regardless of response format differences
-- **Context guard** — Prevents prompt leakage and keeps the agent focused on the current test phase
-- **Provider auto-detection** — Automatically identifies your LLM endpoint and configures the optimal transport
-- **Tool orchestration** — Chains security tools intelligently based on findings, not fixed scripts
-
-**150+ AI providers and 5,300+ models supported out of the box:**
-
-CyberStrike integrates with the entire AI ecosystem through 23 bundled SDK providers and 150+ providers via the [models.dev](https://models.dev) catalog. Here are the core integrations:
-
-| Provider                  | Models                   | Notes                                   |
-| ------------------------- | ------------------------ | --------------------------------------- |
-| **Anthropic**             | Claude 4.5, Claude 4     | Best performance with extended thinking |
-| **OpenAI**                | GPT-5, GPT-4.1, o3, o4   | Full tool-use + reasoning support       |
-| **Google**                | Gemini 2.5 Pro/Flash     | Long context for large codebases        |
-| **Amazon Bedrock**        | All Bedrock models       | IAM auth, no API keys needed            |
-| **Azure OpenAI**          | All Azure-hosted models  | Enterprise deployments                  |
-| **Google Vertex AI**      | Gemini + Claude on GCP   | Regional endpoints (EU/US)              |
-| **GitHub Copilot**        | GPT-5, Claude, Gemini    | Use your existing Copilot subscription  |
-| **xAI**                   | Grok 3, Grok 3 Mini      | Real-time data access                   |
-| **Groq**                  | LLaMA, Mixtral           | Ultra-fast inference                    |
-| **Mistral**               | Mistral Large, Codestral | European data residency                 |
-| **DeepSeek**              | DeepSeek V3, R1          | Cost-effective alternative              |
-| **Cerebras**              | LLaMA on Cerebras        | Fastest inference available             |
-| **Cohere**                | Command R+               | RAG-optimized models                    |
-| **OpenRouter**            | 300+ models              | Single API, any model                   |
-| **Together AI**           | Open-source models       | Fine-tuning support                     |
-| **DeepInfra**             | Open-source models       | Pay-per-token, no GPU needed            |
-| **Perplexity**            | Sonar models             | Search-augmented generation             |
-| **Alibaba Cloud**         | Qwen, Kimi, DashScope    | Chinese model ecosystem                 |
-| **Cloudflare AI Gateway** | Any provider via gateway | Caching, rate limiting, analytics       |
-| **Ollama**                | Any GGUF model           | Fully offline, local-only               |
-| **LM Studio**             | Any local model          | Desktop GUI + API server                |
-| **vLLM**                  | Any HuggingFace model    | Self-hosted, GPU-optimized              |
-| **Any OpenAI-compatible** | —                        | Custom endpoints welcome                |
-
-> **Air-gapped environments?** Run CyberStrike entirely offline with Ollama or LM Studio. No data leaves your machine — ever.
-
----
-
-### What Makes It Different
-
-<table>
-<tr>
-<td width="50%">
-
-**Specialized Security Agents, Not Generic Chat**
-
-CyberStrike ships with 13+ agents purpose-built for security domains. Each agent carries domain-specific methodology, tool knowledge, and testing patterns. The web-application agent follows OWASP WSTG. The cloud-security agent knows CIS benchmarks. The mobile agent uses Frida and follows MASTG/MASVS. They don't guess — they follow proven offensive security frameworks.
-
-</td>
-<td width="50%">
-
-**Intelligence Layer, Not Just an LLM Wrapper**
-
-Most AI security tools are thin wrappers that send your prompt to an API. CyberStrike's intelligence layer normalizes outputs across 150+ providers and 5,300+ models, guards context between test phases, auto-detects your provider configuration, and orchestrates multi-step attack chains. The result: consistent, methodology-driven pentesting regardless of which model you use.
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-**150+ Providers, Zero Lock-in**
-
-Anthropic, OpenAI, Google, Amazon Bedrock, Azure, Groq, Mistral, xAI, DeepSeek, Cerebras, Cohere, OpenRouter, Together AI, GitHub Copilot — or run fully offline with Ollama and LM Studio. 150+ providers, 5,300+ models. You choose the model. You own the results. As AI models get better and cheaper, CyberStrike gets better with them. Switch providers in seconds without reconfiguring anything.
-
-</td>
-<td width="50%">
-
-**Remote Tool Execution with Bolt**
-
-Your security tools don't have to run on your laptop. Deploy Bolt on one or many remote servers, pair with Ed25519 keys, and control everything from your local terminal. One CyberStrike instance can orchestrate dozens of Bolt servers — each with its own toolkit, network position, and attack surface access.
-
-</td>
-</tr>
-</table>
-
----
-
-### Agents
-
-Switch between agents with `Tab`. Each one is a domain specialist.
-
-| Agent                  | Focus   | What It Does                                                        |
-| ---------------------- | ------- | ------------------------------------------------------------------- |
-| **cyberstrike**        | General | Full-access primary agent — reconnaissance, exploitation, reporting |
-| **web-application**    | Web     | OWASP Top 10, WSTG methodology, API security, session testing       |
-| **mobile-application** | Mobile  | Android/iOS, Frida/Objection, MASTG/MASVS compliance                |
-| **cloud-security**     | Cloud   | AWS, Azure, GCP — IAM misconfigs, CIS benchmarks, exposed resources |
-| **internal-network**   | Network | Active Directory, Kerberos attacks, lateral movement, pivoting      |
-
-Plus **8 specialized proxy testers** that run automatically on intercepted traffic:
-
-| Tester                   | What It Tests                                                                |
-| ------------------------ | ---------------------------------------------------------------------------- |
-| **IDOR**                 | Object-level access control — can user A reach user B's resources?           |
-| **Authorization Bypass** | Vertical privilege escalation — can low-privilege users hit admin endpoints? |
-| **Mass Assignment**      | Unexpected writable fields — role, price, balance, userId in request bodies  |
-| **Injection**            | SQL, command, LDAP, template injection across all input vectors              |
-| **Authentication**       | Token validation, session fixation, credential exposure                      |
-| **Business Logic**       | Price manipulation, coupon reuse, race conditions, workflow bypass           |
-| **SSRF**                 | Internal host access via user-controlled URLs or redirect parameters         |
-| **File Attacks**         | Path traversal, unrestricted upload, dangerous file types                    |
-
-Each tester uses a **3-gate confirmation protocol**: execute a baseline request, execute the attack, compare responses. A finding is only reported when there is a measurable, reproducible difference — not on speculation. Duplicate findings (same endpoint + attack vector) are automatically suppressed across the session.
-
----
-
-### Security Skills
-
-CyberStrike ships with **7,600+ security skill files** — structured, Ed25519-signed methodology documents that give agents deep domain knowledge at runtime. Skills are lazy-loaded (one at a time, on demand) and statically injected into agent prompts.
-
-**Skill categories:**
-
-| Category                  | Skills | What They Cover                                                                                                                                                                            |
-| ------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Attack Methodologies**  | 19     | JWT attacks, SSRF, SSTI, race conditions, request smuggling, cache poisoning, CORS, GraphQL, prototype pollution, XXE, WebSocket, subdomain takeover, host header injection, open redirect |
-| **Post-Exploitation**     | 5      | AWS, Azure, Kubernetes, Windows, macOS privilege escalation and persistence                                                                                                                |
-| **Compliance Frameworks** | 3      | CIS Benchmarks (AWS/Azure/GCP/K8s), NIST Framework, MITRE ATT&CK (Enterprise, Mobile, ICS)                                                                                                 |
-| **Domain Knowledge**      | 8+     | Active Directory security, web security patterns, recon methodology, CI/CD attacks, Kerberos attacks, eBPF techniques                                                                      |
-
-Each skill includes testing procedures, payloads, tool commands, and CWE mappings. Skills are tagged with OWASP WSTG IDs, CIS control IDs, and chain relationships — so agents know which skills to combine for multi-step attack chains.
-
----
-
-### HackBrowser
-
-> Full documentation: **[docs.cyberstrike.io/docs/tools/hacker-browser](https://docs.cyberstrike.io/docs/tools/hacker-browser/)**
-
-HackBrowser is CyberStrike's built-in Chromium browser. Start it from the TUI with `/hackbrowser`. As you browse, every HTTP request is captured and routed through the proxy-agent pipeline — no manual export, no Burp project files.
-
-**Two capture modes:**
-
-- **Manual** — Browse the target yourself. Log in as different users, navigate features, trigger actions. HackBrowser captures the real API traffic behind every click.
-- **Autonomous** — Provide credentials for multiple accounts, set a scope, and let HackBrowser crawl automatically. It logs in as each user, maps reachable pages, and captures the traffic difference between roles.
-
-**Role & credential discovery:**
-
-As you browse with multiple accounts, CyberStrike builds a session context — a live map of discovered credentials, inferred role hierarchy, and which endpoints each role can reach. The 8 proxy sub-testers use this context directly: they know which token to use for a high-privilege baseline and which lower-privilege credentials to test with, without any manual setup.
-
-```
-Browser traffic → Proxy intercept → Orchestrator → 8 sub-testers (parallel)
-                                          ↓
-                               Session context (credentials, roles,
-                               endpoints, functions) shared across all testers
-```
-
-**Scope control:**
-
-Use `--scope` to limit testing to specific domains. CyberStrike automatically derives the registered domain (e.g. `--scope api.example.com` covers `api.example.com` but not `other.com`). Pass multiple `--scope` flags for multi-domain targets.
-
----
-
-### Web UI & Remote Access
-
-CyberStrike includes a full web interface. Run `cyberstrike web` and control your agents, MCP servers, Bolt connections, and vulnerability findings from any browser.
-
-**Access from anywhere with Cloudflare Tunnel:**
-
-```
-Browser ──HTTPS──▶ Cloudflare Tunnel ──encrypted──▶ cloudflared (localhost) ──▶ CyberStrike Server
-```
-
-```bash
-export CYBERSTRIKE_SERVER_PASSWORD=your-secure-password
-cyberstrike web
-# In another terminal:
-cloudflared tunnel --url http://localhost:4096 run your-tunnel
-```
-
-**Why this is secure:**
-
-- **Zero open ports** — CyberStrike binds to `localhost:4096`. `cloudflared` makes an outbound-only connection to Cloudflare's edge. No firewall rules, no port forwarding needed.
-- **End-to-end encryption** — Browser to Cloudflare edge is TLS. Cloudflare edge to your machine is an encrypted tunnel. No plaintext leaves your network.
-- **Password-protected API** — Every API request requires Basic Auth. Local requests on `localhost` bypass auth for convenience; remote requests via CF tunnel always require credentials (detects `X-Forwarded-For` / `CF-Connecting-IP`).
-- **Your data stays local** — LLM inference runs on your hardware. CyberStrike processes everything locally. The tunnel is just a secure pipe.
-
-**What's in the Web UI:**
-
-| Tab                 | What It Does                                                                   |
-| ------------------- | ------------------------------------------------------------------------------ |
-| **Chat**            | Full conversation with all 13+ security agents                                 |
-| **MCP**             | Live MCP server status, health, and tool counts                                |
-| **Bolt**            | Bolt remote server connection monitoring                                       |
-| **Vulnerabilities** | Discovered vulns with severity, PoC, and impact                                |
-| **Web Context**     | Endpoints, roles, credentials, and functions discovered during active sessions |
-
-**[app.cyberstrike.io](https://app.cyberstrike.io)** is a hosted static page (no backend, no data storage) for convenience. Or self-host: clone the repo and serve `packages/app/dist/` from your own domain.
-
----
-
-### Bolt — Remote Tool Execution
-
-Bolt is CyberStrike's remote tool server. Deploy it on any VPS, cloud instance, or Docker container — then control it from your local terminal over MCP protocol with Ed25519 authentication.
-
-**One CyberStrike, many Bolt servers:**
-
-```
-                                          ┌─────────────────────┐
-                                     ┌───►│  Bolt Server #1     │
-                                     │    │  nmap, nuclei, ffuf  │
-┌──────────────────┐   MCP + Ed25519 │    └─────────────────────┘
-│  Your Terminal   │   over HTTPS    │    ┌─────────────────────┐
-│  CyberStrike TUI │ ◄─────────────►├───►│  Bolt Server #2     │
-│                  │   Tool Results   │    │  sqlmap, burp, zap   │
-└──────────────────┘                 │    └─────────────────────┘
-                                     │    ┌─────────────────────┐
-                                     └───►│  Bolt Server #3     │
-                                          │  Custom toolkit      │
-                                          └─────────────────────┘
-```
-
-- **Deploy anywhere** — VPS, Docker, Kubernetes, or bare metal with pre-built Kali images
-- **Ed25519 key pairing** — No passwords, no shared secrets, no attack surface
-- **Real-time streaming** — Results flow back to your TUI as they happen
-- **Manage from TUI** — Add, remove, and monitor Bolt servers without leaving CyberStrike
-- **Scale horizontally** — Run heavy scans from servers with better bandwidth while you work locally
-
----
-
-### MCP Ecosystem
-
-CyberStrike connects to specialized MCP servers that extend its capabilities — **176+ security tools** across 5 domains:
-
-| Server                                                                 | Tools | What It Adds                                                         |
-| ---------------------------------------------------------------------- | ----- | -------------------------------------------------------------------- |
-| [cloud-audit-mcp](https://github.com/badchars/cloud-audit-mcp)         | 38    | Cloud security audits — 60+ checks across AWS, Azure, GCP            |
-| [github-security-mcp](https://github.com/badchars/github-security-mcp) | 39    | GitHub security posture — repo, org, actions, secrets, supply chain  |
-| [cve-mcp](https://github.com/badchars/cve-mcp)                         | 23    | CVE intelligence — NVD, EPSS, CISA KEV, GitHub Advisory, OSV         |
-| [osint-mcp](https://github.com/badchars/osint-mcp)                     | 37    | OSINT recon — Shodan, VirusTotal, SecurityTrails, Censys, DNS, WHOIS |
-
-All open source. All installable with `npx`. Plug them into CyberStrike or use them standalone with any MCP-compatible client.
-
----
-
-### Built-in Tools
-
-CyberStrike agents have direct access to **56+ tools** without any external dependencies:
-
-| Category              | Tools                                                                               |
-| --------------------- | ----------------------------------------------------------------------------------- |
-| **Execution**         | Shell (bash), file read/write/edit/patch, directory listing, batch operations       |
-| **Discovery**         | Web fetch, web search, code search, glob, grep, intel gathering                     |
-| **Offensive**         | HackBrowser, attack script execution, vulnerability reporting & triage              |
-| **Post-Exploitation** | AWS hook, Azure hook, Kubernetes hook, Windows hook, macOS hook, CI/CD pipe, eBPF   |
-| **Web Context**       | Session context, endpoint/role/credential/function discovery and management         |
-| **Proxy**             | HTTP/HTTPS interception, request replay, session context sharing across sub-testers |
-| **Reporting**         | Professional report generation, coverage notes, methodology tracking, VRT checks    |
-| **Integration**       | MCP servers, Bolt remote tools, custom plugins, LSP                                 |
-
-Plus a **plugin SDK** with 15+ hook types (tool interception, message transformation, permission prompts, shell environment) — build your own agents and tools, register them at runtime.
-
----
-
-### Post-Exploitation
-
-CyberStrike includes built-in post-exploitation capabilities across multiple platforms — no external tools required.
-
-| Platform       | Capabilities                                                                                                                                                                     |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **macOS**      | Chrome credential extraction, Keychain dumping, keylogging, TCC bypass, GateKeeper bypass, XProtect checks, SSH key extraction, DTrace system tracing                            |
-| **Windows**    | Post-exploitation hooks for privilege escalation and persistence                                                                                                                 |
-| **Linux/eBPF** | 29 kernel-level scripts — process execution monitoring, SSL/TLS sniffing, keystroke logging, namespace manipulation detection, rootkit detection, process/file/connection hiding |
-| **AWS**        | IAM enumeration, S3 exposure, Lambda backdoors, CloudTrail evasion                                                                                                               |
-| **Azure**      | Identity enumeration, storage exposure, function exploitation                                                                                                                    |
-| **Kubernetes** | Pod escape, service account abuse, secret extraction, RBAC exploitation                                                                                                          |
-| **CI/CD**      | Pipeline injection, secret extraction, build artifact manipulation                                                                                                               |
-
-All post-exploitation tools are agent-driven — they execute based on context and findings, not as fixed scripts.
-
----
-
-### Installation
-
-```bash
-# npm (recommended)
 npm i -g @cyberstrike-io/cyberstrike@latest
-
-# bun / pnpm / yarn
-bun add -g @cyberstrike-io/cyberstrike@latest
-
-# macOS (Homebrew)
-brew install CyberStrikeus/tap/cyberstrike
-
-# Windows (Scoop)
-scoop install cyberstrike
-
-# Linux / macOS (curl)
-curl -fsSL https://cyberstrike.io/install.sh | bash
+cyberstrike
 ```
 
+See the [upstream documentation](https://docs.cyberstrike.io) for its supported release workflow. The npm package
+does not necessarily include enhancements that exist only on this fork.
+
+#### Build and deploy the fork on Kali/Linux
+
+Source deployments require the compiled binary, matching HackBrowser worker, and Web UI bundle. Use the
+repository-pinned Bun version:
+
+```bash
+bun install --frozen-lockfile
+bun run --cwd packages/app build
+CYBERSTRIKE_BUILD_TARGET=linux-x64 bun run --cwd packages/cyberstrike script/build.ts
+
+# Installs the binary and its sibling HackBrowser worker.
+./install --binary packages/cyberstrike/dist/cyberstrike-linux-x64/bin/cyberstrike
+
+# Installs the locally built Web UI.
+install -d "${XDG_DATA_HOME:-$HOME/.local/share}/cyberstrike/web"
+cp -R packages/app/dist/. "${XDG_DATA_HOME:-$HOME/.local/share}/cyberstrike/web/"
+
+CYBERSTRIKE_SERVER_PASSWORD=change-me cyberstrike web --hostname 127.0.0.1
+```
+
+Use `linux-x64-baseline` on x64 CPUs without AVX2, or the corresponding `*-musl` target on musl-based
+distributions. Back up the installed binary, configuration, and data directory before replacing a managed
+deployment.
+
+For a persistent localhost-only service, install
+[`contrib/systemd/cyberstrike-web.service`](./contrib/systemd/cyberstrike-web.service) under
+`~/.config/systemd/user/`. Create a mode `0600` file at `~/.config/cyberstrike/web.env` containing
+`CYBERSTRIKE_SERVER_PASSWORD`, then run:
+
+```bash
+systemctl --user daemon-reload
+systemctl --user enable --now cyberstrike-web.service
+```
+
+#### Remote access and observers
+
+Keep the service bound to localhost and use an authenticated SSH or Cloudflare tunnel rather than exposing port
+`4096` directly.
+
+```bash
+export CYBERSTRIKE_SERVER_PASSWORD=your-operator-password
+export CYBERSTRIKE_OBSERVER_PASSWORD=your-read-only-password
+cyberstrike web --hostname 127.0.0.1
+```
+
+The optional `observer` credential is restricted by server policy. It is suitable for monitoring redacted engagement
+state, not for controlling agents or accessing secrets. If user or project configuration prevents startup,
+`cyberstrike web --safe` starts recovery mode without those configuration sources; managed administrator policy is
+still enforced.
+
 ---
 
-### Who Is This For?
+### Upstream Project and Contributor Credit
 
-- **Pentesters** — Automate the repetitive parts. Let agents handle recon and initial testing while you focus on the creative attack chains that need human intuition.
-- **Bug Bounty Hunters** — Faster reconnaissance, wider coverage, consistent methodology across programs. CyberStrike doesn't get tired at 3am.
-- **Security Teams** — Run structured OWASP assessments with reproducible methodology. Get reports that map to standards your compliance team understands.
-- **Security Researchers** — Extend CyberStrike with custom agents and MCP servers. The plugin system and MCP protocol make it a platform, not just a tool.
+This fork exists because of the original CyberStrike project and the work of its maintainers and community.
 
----
+| Resource                  | Link                                                                                     |
+| ------------------------- | ---------------------------------------------------------------------------------------- |
+| **Original repository**   | [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike)                |
+| **Upstream contributors** | [Contributor history](https://github.com/CyberStrikeus/CyberStrike/graphs/contributors)  |
+| **Documentation**         | [docs.cyberstrike.io](https://docs.cyberstrike.io)                                       |
+| **Website**               | [cyberstrike.io](https://cyberstrike.io)                                                 |
+| **Published package**     | [@cyberstrike-io/cyberstrike](https://www.npmjs.com/package/@cyberstrike-io/cyberstrike) |
+| **Releases**              | [Upstream releases](https://github.com/CyberStrikeus/CyberStrike/releases)               |
+| **Issues and roadmap**    | [Upstream issues](https://github.com/CyberStrikeus/CyberStrike/issues)                   |
+| **Community**             | [Discord](https://discord.gg/snunAaHf6U)                                                 |
 
-### Contributing
-
-CyberStrike is a personal project with community-sized ambition. I am opening the doors because the future of security should not be designed in a closed room. If you believe agents can do more than chat, tools can do more than sit in silos, and open systems can outperform locked ecosystems, there is a place for your work here.
-
-We welcome contributions across:
-
-- **Security agents and skills** — New attack methodologies, testing patterns, vulnerability detection
-- **MCP servers** — Connect new security tools and data sources
-- **Knowledge base** — WSTG, MASTG, PTES, CIS methodology guides
-- **Core improvements** — Performance, UX, provider integrations, bug fixes
-
-Read the [Contributing Guide](./CONTRIBUTING.md) before submitting a PR. All contributions must follow the project's [ethical use policy](./CODE_OF_CONDUCT.md) — CyberStrike is for authorized security testing only.
+Git history is intentionally preserved so upstream and fork contributors remain attributed for their work. For
+changes intended for the original project, read the [Contributing Guide](./CONTRIBUTING.md) and submit them to the
+upstream repository. Fork-specific work should be proposed to
+[`spetro511/CyberStrike`](https://github.com/spetro511/CyberStrike) against the appropriate personal-fork branch.
 
 ---
 
-### Maintainer & Contact
+### Ethical Use
 
-<table>
-<tr>
-<td width="140" align="center">
-  <a href="https://github.com/spetro511"><b>Suren<br>Sahaydachny</b></a>
-</td>
-<td>
+CyberStrike is intended only for systems you own or are explicitly authorized to test. Users are responsible for
+scope, approvals, data handling, tool execution, and compliance with applicable laws and engagement rules.
 
-**Suren Sahaydachny** maintains this public CyberStrike workstream as a personal open-source project focused on AI-first systems, multi-agent orchestration, security automation, and the future of human-machine collaboration.
-
-- **Email:** [surenpeter511@gmail.com](mailto:surenpeter511@gmail.com)
-- **LinkedIn:** [linkedin.com/in/suren-sahaydachny](https://www.linkedin.com/in/suren-sahaydachny)
-- **GitHub:** [github.com/spetro511](https://github.com/spetro511)
-
-</td>
-</tr>
-</table>
-
-If you are building at the intersection of AI, orchestration, open source, and security—or if you simply see the same future I do—reach out. You never know what a brief conversation can lead to, especially these days.
-
-#### Provenance
-
-This personal workstream is based on the upstream [CyberStrike](https://github.com/CyberStrikeus/CyberStrike) project. Its Git history, contributors, license, and attribution remain preserved. Personal stewardship by Suren Sahaydachny is additive, not a claim over the work of the broader CyberStrike community.
+The agent is **not a security sandbox**. Review commands and active-test previews before approving them, protect
+credentials, and do not expose the Web UI directly to untrusted networks. Read the
+[Code of Conduct and ethical-use policy](./CODE_OF_CONDUCT.md) and [Security Policy](./SECURITY.md) before operating
+the software.
 
 ---
 
 ### License
 
-[AGPL-3.0-only](./LICENSE) — Free for personal and open-source use. Commercial licensing available via [contact@cyberstrike.io](mailto:contact@cyberstrike.io).
+The upstream project and this fork are distributed under the
+[GNU Affero General Public License v3.0 only](./LICENSE) (`AGPL-3.0-only`). Fork modifications remain under the same
+license and do not replace or weaken upstream copyright or contributor attribution.
 
----
-
-### MCP Security Suite
-
-CyberStrike is the core platform. These MCP servers extend its capabilities:
-
-| Project                                                                | Domain                                  | Tools                                                       |
-| ---------------------------------------------------------------------- | --------------------------------------- | ----------------------------------------------------------- |
-| **CyberStrike**                                                        | **Autonomous offensive security agent** | **13+ agents, 56+ tools, 7,600+ skills, 150+ AI providers** |
-| [cloud-audit-mcp](https://github.com/badchars/cloud-audit-mcp)         | Cloud security (AWS/Azure/GCP)          | 38 tools, 60+ checks                                        |
-| [github-security-mcp](https://github.com/badchars/github-security-mcp) | GitHub security posture                 | 39 tools, 45 checks                                         |
-| [cve-mcp](https://github.com/badchars/cve-mcp)                         | Vulnerability intelligence              | 23 tools, 5 sources                                         |
-| [osint-mcp](https://github.com/badchars/osint-mcp-server)              | OSINT & reconnaissance                  | 37 tools, 12 sources                                        |
+The upstream project also advertises commercial licensing through
+[contact@cyberstrike.io](mailto:contact@cyberstrike.io).
 
 ---
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/suren-sahaydachny"><b>Suren Sahaydachny</b></a> · <a href="mailto:surenpeter511@gmail.com"><b>Email</b></a> · <a href="https://github.com/spetro511"><b>GitHub</b></a> · <a href="https://cyberstrike.io"><b>CyberStrike</b></a> · <a href="https://docs.cyberstrike.io"><b>Docs</b></a> · <a href="https://discord.gg/snunAaHf6U"><b>Discord</b></a>
+  <a href="https://github.com/CyberStrikeus/CyberStrike"><b>Original CyberStrike project</b></a> ·
+  <a href="https://github.com/spetro511/CyberStrike"><b>Suren's personal fork</b></a> ·
+  <a href="https://docs.cyberstrike.io"><b>Upstream docs</b></a> ·
+  <a href="https://cyberstrike.io"><b>Upstream website</b></a>
 </p>
 <p align="center">
-  <sub>A personal open-source workstream maintained by <b>Suren Sahaydachny</b> — for security professionals who got tired of being the middleware between their tools.</sub>
-</p>
-<p align="center">
-  <strong>The next era will not be defined by more software. It will be defined by better orchestration.</strong>
+  <sub>Upstream CyberStrike and its contributors are the foundation of this enhanced personal distribution.</sub>
 </p>
