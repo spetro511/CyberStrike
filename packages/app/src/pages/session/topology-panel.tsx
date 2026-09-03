@@ -1,4 +1,4 @@
-import { For, Show, createEffect, createMemo, createSignal, onCleanup } from "solid-js"
+import { For, Show, createEffect, createMemo, createSignal, on, onCleanup } from "solid-js"
 import { createStore, reconcile } from "solid-js/store"
 import { useParams } from "@solidjs/router"
 import type {
@@ -11,6 +11,7 @@ import { Icon } from "@cyberstrike-io/ui/icon"
 import { useSDK } from "@/context/sdk"
 import { useServer } from "@/context/server"
 import { usePrompt } from "@/context/prompt"
+import { useWorkbench } from "@/context/workbench"
 
 type Node = TopologyGetResponse["nodes"][number]
 type Kind = Node["kind"]
@@ -44,6 +45,7 @@ export function TopologyPanel() {
   const sdk = useSDK()
   const server = useServer()
   const prompt = usePrompt()
+  const workbench = useWorkbench()
   const [graph, setGraph] = createStore<TopologyGetResponse>({
     sessionID: "",
     nodes: [],
@@ -61,6 +63,7 @@ export function TopologyPanel() {
   const [from, setFrom] = createSignal("")
   const [to, setTo] = createSignal("")
   const [importing, setImporting] = createSignal(false)
+  const [historySession, setHistorySession] = createSignal("")
   const [draft, setDraft] = createStore({ content: "", link: "", saving: false })
   const [scan, setScan] = createStore({
     target: "",
@@ -68,6 +71,9 @@ export function TopologyPanel() {
   })
   let fileInput!: HTMLInputElement
   let generation = 0
+  let pending = false
+  let loading: Promise<boolean> | undefined
+  let refreshTimer: ReturnType<typeof setTimeout> | undefined
 
   const load = async () => {
     const sessionID = params.id
@@ -83,6 +89,7 @@ export function TopologyPanel() {
       setGraph(reconcile(topology.data))
       setNotes(reconcile(noteList.data ?? []))
       setScans(reconcile(history.data ?? []))
+      setHistorySession(sessionID)
       const available = history.data ?? []
       if (available.length >= 2 && (!available.some((scan) => scan.id === from()) || !available.some((scan) => scan.id === to()))) {
         setFrom(available.at(-2)!.id)
@@ -95,22 +102,53 @@ export function TopologyPanel() {
       return false
     }
   }
+  const refresh = () => {
+    if (loading) {
+      pending = true
+      return loading
+    }
+    loading = load().finally(() => {
+      loading = undefined
+      if (!pending) return
+      pending = false
+      void refresh()
+    })
+    return loading
+  }
 
   createEffect(() => {
-    params.id
+    const sessionID = params.id
+    setGraph(reconcile({ sessionID: sessionID ?? "", nodes: [], edges: [], time: 0 }))
+    setNotes(reconcile([]))
+    setScans(reconcile([]))
+    setHistorySession("")
     setFrom("")
     setTo("")
     setDiff(undefined)
     let alive = true
-    void load()
+    void refresh()
     const timer = setInterval(() => {
-      if (alive) void load()
-    }, 10_000)
+      if (alive) void refresh()
+    }, 30_000)
     onCleanup(() => {
       alive = false
       generation++
       clearInterval(timer)
     })
+  })
+
+  createEffect(
+    on(
+      () => workbench.revision("topology"),
+      () => {
+        if (refreshTimer) clearTimeout(refreshTimer)
+        refreshTimer = setTimeout(() => void refresh(), 250)
+      },
+      { defer: true },
+    ),
+  )
+  onCleanup(() => {
+    if (refreshTimer) clearTimeout(refreshTimer)
   })
 
   createEffect(() => {
@@ -138,7 +176,7 @@ export function TopologyPanel() {
   const prepareScan = () => {
     const target = scan.target.trim()
     if (!target) return
-    const value = `Run the built-in nmap_scan tool against the explicitly authorized target ${target} with the ${scan.profile} profile. Preview the exact command (${command()}), confirm scope and expected impact, and wait for my approval before starting. Persist the XML result into topology and compare it with prior scans.`
+    const value = `Run the built-in nmap_scan tool against the explicitly authorized target ${target} with the ${scan.profile} profile. Preview the planned Nmap arguments (${command()}); the approval card must show the resolved executor and exact command, including sudo when elevated. Confirm scope and expected impact, and wait for my approval before starting. Persist the XML result into topology and compare it with prior scans.`
     prompt.set([{ type: "text", content: value, start: 0, end: value.length }], value.length)
   }
 
@@ -157,7 +195,7 @@ export function TopologyPanel() {
         name: file.name.replace(/\.xml$/i, ""),
         xml: await file.text(),
       })
-      await load()
+      await refresh()
       setError("")
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : String(cause))
@@ -388,6 +426,12 @@ export function TopologyPanel() {
               >
                 Prepare scan
               </button>
+            </div>
+          </Show>
+          <Show when={historySession() === params.id && scans.length === 0}>
+            <div class="px-2 pb-1.5 text-10-regular text-text-warning-base">
+              No managed Nmap evidence yet. Generic shell output cannot populate this graph; use Prepare scan or
+              Import XML so canonical results are saved to Topology.
             </div>
           </Show>
         </div>
